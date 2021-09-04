@@ -23,7 +23,9 @@ class TreasureHunt
             $new_treasure_col = rand(0, 7);
             $new_fake_treasure_row = rand(0, 5);
             $new_fake_treasure_col = rand(0, 7);
+            
             $this->run($new_treasure_row, $new_treasure_col, $new_fake_treasure_row, $new_fake_treasure_col, $player_row, $player_col);
+            return;
         }
         $grids[$treasure_row][$treasure_col] = '$';
         $grids[$fake_treasure_row][$fake_treasure_col] = '$';
@@ -45,23 +47,23 @@ class TreasureHunt
         }
 
         // User Input
-        echo 'Pilih: ';
+        echo 'Masukan Navigasi => A(UP), B(RIGHT), C(DOWN): ';
         $input = trim(fgets(STDIN));
 
         switch ($input) {
-            case 'A': // $player_col-1 (Navigate UP)
+            case 'A': // (Navigate UP)
                 $player_row = $player_row-1;
                 if($grids[$player_row][$player_col] == '#'){
                     $player_row = $player_row+1;
                 }
                 break;
-            case 'B': // $player_row+1 (Navigate RIGHT)
+            case 'B': // (Navigate RIGHT)
                 $player_col = $player_col+1;
                 if($grids[$player_row][$player_col] == '#'){
                     $player_col = $player_col-1;
                 }
                 break;
-            case 'C': // $player_col+1 (Navigate DOWN)
+            case 'C': // (Navigate DOWN)
                 $player_row = $player_row+1;
                 if($grids[$player_row][$player_col] == '#'){
                     $player_row = $player_row-1;
