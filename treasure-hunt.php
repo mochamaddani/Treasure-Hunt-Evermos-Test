@@ -23,7 +23,7 @@ class TreasureHunt
             $new_treasure_col = rand(0, 7);
             $new_fake_treasure_row = rand(0, 5);
             $new_fake_treasure_col = rand(0, 7);
-            
+
             $this->run($new_treasure_row, $new_treasure_col, $new_fake_treasure_row, $new_fake_treasure_col, $player_row, $player_col);
             return;
         }
@@ -34,7 +34,7 @@ class TreasureHunt
         $grids[$player_row][$player_col] = 'X';
 
         if(($player_row == $treasure_row) && ($player_col == $treasure_col)){ //If treasure found, end game, and show treasure point
-            echo "Selamat, harta karun ditemukan!!!, harta karun ada di titik(kolom=".$treasure_col." dan baris=".$treasure_row.")\n";
+            echo "Selamat, harta karun ditemukan!!!, harta karun ada di titik(kolom=".($treasure_col+1)." dan baris=".($treasure_row+1).")\n";
             return;
         }
 
